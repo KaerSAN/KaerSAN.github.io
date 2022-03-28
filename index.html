@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./鱿鱼游戏.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 99.9vh;
+    /* vh是视窗高度,1vh是视窗高度的百分之一 */
+    /* vw是视窗宽度,1vw是视窗宽度的百分之一 */
+    display: flex;
+    background: #262626;
+}
+.container ::before {
+    content: '';
+    /* CSS的 content CSS 属性用于在元素的  ::before 和 ::after 伪元素中插入内容。 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(90deg,#fff1 0px, #fff1 1px, transparent 1px, transparent 10px) repeating-linear-gradient(0deg,#fff1 0px, #fff1 1px, transparent 1px, transparent 10px);
+    background-size: 10px 10px;
+    /* 设置背景图片大小 */
+}
+.container .card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* justify-content: center;居中排列 */
+    align-items: center;
+    /* 元素位于容器的中心。 */
+    flex-grow: 1;
+    /* 让这个元素的宽度为其他元素的一倍： */
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+.container .card:hover {
+    flex-grow: 3;
+    /* 悬停时这个元素的宽度为其他元素的三倍： */
+    background: #1a1a1a;
+}
+.container .card ion-icon {
+    font-size: 15vw;
+    color: #1a1a1a;
+    transition: 0.5s ease-in-out;
+    /* ease-in-out过度时的效果 */
+    /* transition过渡 */
+}
+.container .card:hover ion-icon {
+    color: #fff;
+    font-size: 25vw;
+    filter: drop-shadow(0 0 20px #ea4884)
+    /* filter滤镜 */
+    drop-shadow(0 0 30px #ea4884)
+    drop-shadow(0 0 60px #ea4884)
+    drop-shadow(0 0 100px #ea4884)
+    drop-shadow(0 0 150px #ea4884)
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card"><ion-icon name="ellipse-outline"></ion-icon></div>
+        <div class="card"><ion-icon name="triangle-outline"></ion-icon></div>
+        <div class="card"><ion-icon name="square-outline"></ion-icon></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
